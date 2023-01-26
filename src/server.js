@@ -2,7 +2,7 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import __dirname from './dirname.js';
 import productsRoutes from './routes/products.routes.js'
-//import viewsRoutes from "./routes/views.routes.js"
+import viewsRoutes from "./routes/views.routes.js"
 import mongoose from 'mongoose';
 import Handlebars from 'handlebars';
 import { allowInsecurePrototypeAccess } from '@handlebars/allow-prototype-access'
@@ -36,7 +36,7 @@ app.engine('hbs', handlebars.engine({
  //Routes
   app.use('/api/products', productsRoutes)
 
- //app.use('/', viewsRoutes);
+  app.use('/', viewsRoutes);
  
   app.listen(3000, () => { console.log('Servidor escuchando en el puerto 3000') })
   

@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const product = await productsDao.create(req.body);
-    res.json(product);
+    res.redirect("/");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
